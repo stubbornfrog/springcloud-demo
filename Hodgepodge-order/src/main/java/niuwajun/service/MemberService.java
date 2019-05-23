@@ -25,6 +25,8 @@ public class MemberService {
 	
 	
     public List<String> helloFallBack(){
-    	return new ArrayList<String>();
+    	ArrayList<String> arrayList = new ArrayList<String>();
+    	arrayList.add("error");
+    	return arrayList;
     }
 }
