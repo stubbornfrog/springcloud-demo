@@ -6,4 +6,4 @@ server:
   port: 6001
 spring:
   application:
-    name: service-order-1
+    name: service-order
