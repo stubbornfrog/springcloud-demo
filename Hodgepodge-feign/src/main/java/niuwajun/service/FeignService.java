@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import niuwajun.domain.User;
 
-@FeignClient(value = "service-member")
+@FeignClient(value = "service-member",fallback = FeignFallBack.class)
 public interface FeignService {
 	//服务中方法的映射路径
     @RequestMapping("/hello")
