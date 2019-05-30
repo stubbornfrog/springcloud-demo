@@ -23,7 +23,7 @@ public class MyHystrixCommand extends HystrixCommand<String>{
 	protected String run() throws Exception {
 		String body = "";
 		try {
-			body = restTemplate.getForEntity("http://localhost:8001/getUserList", String.class).getBody();
+			body = restTemplate.getForEntity("http://service-member/getUserList", String.class).getBody();
 		} catch (Exception e) {
 			throw e;
 		}

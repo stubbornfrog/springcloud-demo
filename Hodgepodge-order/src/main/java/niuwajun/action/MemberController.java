@@ -1,5 +1,6 @@
 package niuwajun.action;
 
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import javax.annotation.Resource;
@@ -18,17 +19,19 @@ public class MemberController {
 	@Resource
 	private MemberService memberService;
 	
-//	@RequestMapping("/getUserList")
-//	public List<String> getUserList() throws ExecutionException, InterruptedException {
-//		return memberService.getOrderByUserList();
-//	}
+	@RequestMapping("/getUserList")
+	public List<String> getUserList() throws ExecutionException, InterruptedException {
+		return memberService.getOrderByUserList();
+	}
+	
+	//以下是自定义熔断器
 	
 	@Autowired
     private  RestTemplate restTemplate;
 	
-	@RequestMapping("/getUserList")
-	public String getUserList() throws ExecutionException, InterruptedException {
-		MyHystrixCommand command = new MyHystrixCommand("getUserList",restTemplate);
+	@RequestMapping("/getUserListHys")
+	public String getUserListHys() throws ExecutionException, InterruptedException {
+		MyHystrixCommand command = new MyHystrixCommand("getUserListHys",restTemplate);
 	    String result = command.execute();
 	    return result;
 	}

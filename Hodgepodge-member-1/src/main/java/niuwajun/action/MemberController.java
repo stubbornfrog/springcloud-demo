@@ -18,9 +18,9 @@ public class MemberController {
 	@RequestMapping("/getUserList")
 	public List<String> getUserList() {
 		List<String> listUser = new ArrayList<String>();
-		listUser.add("member1");
-		listUser.add("member1");
-		listUser.add("member1");
+		listUser.add("member8001");
+		listUser.add("member8001");
+		listUser.add("member8001");
 		return listUser;
 	}
 
